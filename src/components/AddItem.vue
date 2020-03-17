@@ -5,8 +5,20 @@
         <label>Item Name</label>
         <input type="text" v-model.lazy="item.name" required/>
         <label>Item Category</label>
-        <input type="text" v-model.lazy="item.category"/>
-        <button v-on:click.prevent="addItem">Add Item</button>
+          <select v-model.lazy="item.category"> 
+            <option value="Fruits">Fruits</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Snacks">Snacks</option>
+            <option value="Toiletries">Toiletries</option>
+            <option value = "Dairy Products">Dairy Products</option>
+            <option value = "Poultry">Poultry</option>
+          </select>
+        <label> Admin Name </label>
+        <input type="text" v-model.lazy="item.admin"/>
+        <!--<input type="text" v-model.lazy="item.category"/>-->
+        <label> Date (ddmmyyyy) </label>
+        <input type="text" v-model.lazy="item.date"/>
+        <p> <button v-on:click.prevent="addItem">Add Item</button> </p>
         
     </form>
   </div>
@@ -22,7 +34,9 @@ export default {
         msg:"Add Item",
         item:{
           name:'',
-          category:''
+          category:'',
+          admin:'',
+          date:''
         },
         
         
@@ -62,7 +76,7 @@ label{
     align-content:left;
 
 }
-input[type="text"]{
+input[type="text"],select{
     display: inline-block;
     padding: 8px;
     width:50%;

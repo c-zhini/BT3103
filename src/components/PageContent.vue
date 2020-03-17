@@ -6,6 +6,8 @@
             <img v-bind:src="item.image" v-show="item.show"/>
             <buttonComponent></buttonComponent>
             <button name="delete" v-bind:id="item.id" v-on:click="deleteItem(index,item)">Delete</button>
+            Admin Name: {{item.admin}}
+            Date: {{item.date}}
         </li>
     </ul>
   </div>
