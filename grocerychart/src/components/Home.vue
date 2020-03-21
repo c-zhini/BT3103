@@ -11,6 +11,10 @@
          <div id="chart">
             <linechart></linechart>
         </div>
+
+        <div id="chart">
+            <pie></pie>
+        </div>
     </div>
 </template>
 
@@ -18,9 +22,10 @@
 import charts from '../charts.js'
 import doughnut from '../doughnut.js'
 import linechart from '../linechart.js'
+import pie from '../pie.js'
 export default {
     components:{
-        charts,doughnut,linechart
+        charts,doughnut,linechart,pie
     }
     
 }

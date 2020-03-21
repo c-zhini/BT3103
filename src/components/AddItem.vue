@@ -4,20 +4,36 @@
     <form id="fm1">
         <label>Item Name</label>
         <input type="text" v-model.lazy="item.name" required/>
-        <label>Item Category</label>
-          <select v-model.lazy="item.category"> 
-            <option value="Fruits">Fruits</option>
-            <option value="Vegetables">Vegetables</option>
-            <option value="Snacks">Snacks</option>
-            <option value="Toiletries">Toiletries</option>
-            <option value = "Dairy Products">Dairy Products</option>
-            <option value = "Poultry">Poultry</option>
-          </select>
+        <label>Item Category: </label><br>
+          <input type="checkbox" v-model.lazy="item.category" id="fruits" name="fruits" value="Fruits"><label for="fruits">Fruits</label><br>
+          <input type="checkbox" v-model.lazy="item.category" id="vege" name="vege" value="Vegetables"><label for="vege">Vegetables</label><br>
+          <input type="checkbox" v-model.lazy="item.category" id="snacks" name="snacks" value="Snacks"><label for="snacks">Snacks</label><br>
+          <input type="checkbox" v-model.lazy="item.category" id="toiletries" name="toiletries" value="Toiletries"><label for="toiletries">Toiletries</label><br>
+          <input type="checkbox" v-model.lazy="item.category" id="dairy" name="dairy" value="Dairy Products"><label for="dairy">Dairy Products</label><br>
+          <input type="checkbox" v-model.lazy="item.category" id="poultry" name="poultry" value="Poultry"><label for="poultry">Poultry</label><br>
+          <input type="checkbox" v-model.lazy="item.category" id="drinks" name="drinks" value="Drinks"><label for="drinks">Drinks</label>
+
+        <label>Date and Time </label> 
+        <input type="datetime-local" v-model.lazy="item.date" name="datetime" step="1">
+        
         <label> Admin Name </label>
-        <input type="text" v-model.lazy="item.admin"/>
+        <select v-model.lazy="item.admin">
+          <option value = "Alexandra"> Alexandra </option>
+          <option value = "Lily"> Lily </option>
+          <option value = "Sean"> Sean </option>
+        </select>
+
+        <label> Storage: </label><br>
+        <input type="radio" v-model.lazy="item.storage" id="chilled" name="storage" value = "Chilled">
+        <label for="chilled">Chilled</label><br>
+        <input type="radio" v-model.lazy="item.storage" id="room" name="storage" value="Room Temperature">
+        <label for="room">Room Temperature</label><br>
+        <input type="radio" v-model.lazy="item.storage" id="frozen" name="storage" value="Frozen">
+        <label for="frozen">Frozen</label><br>
+
+        <!--input type="text" v-model.lazy="item.admin"/-->
         <!--<input type="text" v-model.lazy="item.category"/>-->
-        <label> Date (ddmmyyyy) </label>
-        <input type="text" v-model.lazy="item.date"/>
+        
         <p> <button v-on:click.prevent="addItem">Add Item</button> </p>
         
     </form>
@@ -34,9 +50,10 @@ export default {
         msg:"Add Item",
         item:{
           name:'',
-          category:'',
+          category:[],
           admin:'',
-          date:''
+          date:'',
+          storage:''
         },
         
         
@@ -76,9 +93,13 @@ label{
     align-content:left;
 
 }
-input[type="text"],select{
+input[type="text"],select,input[type="datetime-local"]{
     display: inline-block;
     padding: 8px;
     width:50%;
 }
+input[type = "checkbox"] {
+  width:5%;
+}
+
 </style>

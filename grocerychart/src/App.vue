@@ -2,6 +2,7 @@
   <div id="app">    
     <app-header v-bind:title="msg"></app-header>
     <router-view></router-view>
+    <p></p>
     <app-footer></app-footer>
   </div>
 </template>
@@ -49,4 +50,5 @@ export default {
   color: #2c3e50;
   
 }
+
 </style>

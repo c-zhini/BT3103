@@ -1,6 +1,6 @@
-import {Doughnut} from 'vue-chartjs'
+import {Pie} from 'vue-chartjs'
 export default{
-    extends:Doughnut,
+    extends:Pie,
     data: () => ({
         chartdata: {
           labels: ['January', 'February','March','April'],
@@ -8,24 +8,37 @@ export default{
             {
               label: 'Sales',
               data: [400, 300,150,100],
-              backgroundColor:['aqua','pink','turquoise','orange'],
+              backgroundColor:['turquoise','pink','blue','grey'],
               borderWidth:0.5,
               borderColor:"#000"
             },
             {
                 label: 'Sales2',
                 data: [40, 30,10,15],
-                backgroundColor:['aqua','pink','turquoise','orange']
+                backgroundColor:['turquoise','pink','blue','grey']
               }
           ]
           
         },
+        
         options: {
-            title: {
+            title:{
                 display:true,
-                text:'Doughnut Chart Example',
-                fontColor: 'lightblue',
+                text:'Pie Chart Example',
+                fontColor:'teal',
                 fontSize:15
+
+            },
+            legend:{
+                position:'bottom'
+            },
+            layout:{
+                padding:{
+                    left: 5,
+                    right: 0,
+                    top: 0,
+                    bottom: 5
+                }
             },
             scales:{
                 yAxes:[{
@@ -34,15 +47,7 @@ export default{
                     }
 
                 }]
-            },
-            layout:{
-              padding:{
-                  left: 5,
-                  right: 0,
-                  top: 0,
-                  bottom: 10
-              }
-          }
+            }
           
         }
       }),
