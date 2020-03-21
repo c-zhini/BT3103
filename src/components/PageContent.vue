@@ -10,6 +10,7 @@
             <p> Admin Name: {{item.admin}} </p>
             <p> Date: {{item.date}} </p>
             <p> Category : {{item.category}} </p>
+            <p> Storage: {{item.storage}} </p>
             <!--Date: {{item.date}}-->
         </li>
     </ul>
