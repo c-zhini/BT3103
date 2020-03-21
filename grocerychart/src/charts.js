@@ -7,7 +7,7 @@ export default{
           datasets: [
             {
               label: 'Sales',
-              data: [400, 300,150,100],
+              data: [400, 300,150,1000],
               backgroundColor:'#AA6',
               borderWidth:0.5,
               borderColor:"#000"
